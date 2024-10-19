@@ -1,0 +1,53 @@
+<% layout("/layout/boilerplate.ejs") %>
+
+<body>
+    <form method="post" action="/listings/<%=data._id%>?_method=PATCH">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="mb-3">
+                    <br>
+                    <h1>Edit form</h1>
+                    <br>
+                    <label for="title" class="from-label mb-2 fw-bold"> Enter New Name</label>
+                    <input type="text" name="title" value="<%= data.title %>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label mb-2 fw-bold">Enter New Description</label>
+                    <textarea name="description"  class="form-control"><%= data.description %></textarea>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label for="image" class="from-label mb-2 fw-bold"> Enter New Image URL</label>
+                    <textarea name="image"  class="form-control"><%= data.image.url %></textarea>
+                </div>
+        
+                <div class="row">
+                     <div class="mb-3 col-md-4">
+        <label for="price" class="form-label mb-2 fw-bold">Enter New Price</label>
+                    <input type="number" name="price"  value="<%= data.price %>" class="form-control">
+                </div>
+        
+                <div class="mb-3 col-md-8">
+        <label for="Location" class="form-label mb-2 fw-bold">Enter New Location</label>
+                    <input type="text" name="Location" value="<%= data.location %>" class="form-control">
+                </div>
+                </div>
+               
+        
+                <div class="mb-3">
+                       <label for="country" class="form-label mb-2 fw-bold">Enter New Country</label>
+                    <input type="text" name="country" value="<%= data.country %>" class="form-control">
+                </div>
+        
+                <br><br>
+                
+                <button class="btn btn-dark mt-3">submit</button>
+                <br><br>
+            </div>
+            
+        </div>
+        
+    </form>
+</body>
+

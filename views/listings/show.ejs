@@ -1,0 +1,44 @@
+<% layout("/layout/boilerplate.ejs") %>
+
+    <body>
+
+        <div class="card">
+            <img src="<%=showdata.image%>" class="card-img-top show-img mt-2" alt="show-image">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h1>
+                            <br>
+                            <%= showdata.title %>
+                        </h1>
+                        <br>
+                        <h5> Description:&nbsp;&nbsp;&nbsp;<%=showdata.description%>
+                        </h5>
+                        <br>
+                        <h5> Price:&nbsp;&nbsp;&nbsp;<%=showdata.price%>
+                        </h5>
+                        <br>
+                        <h5> Location:&nbsp;&nbsp;&nbsp;<%=showdata.location%>
+                        </h5>
+                        <br>
+                        <h5>Country:&nbsp;&nbsp;&nbsp;<%=showdata.country%>
+                        </h5>
+                        <br>
+                    </div>
+<div class="btns">
+                    <form method="GET" action="/listings/<%= showdata._id %>/edit">
+                        <button class="btn btn-dark ">edit</button>
+                    </form>
+                    <br>
+                    <form method="post" action="/listings/<%= showdata._id %>?_method=DELETE">
+                        <button class="btn btn-dark delbtn">delete</button>
+                    </form>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+ 
+
+
+    </body>
