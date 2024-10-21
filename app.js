@@ -70,6 +70,9 @@ app.get("/listings", async (req,res)=>{
 app.get("/", (req, res) => {
     res.send("hi! i am raot");
 })
+app.all("*",(req,res,next)=>{
+    res.status(404).send("not found");
+})
 
 app.listen(8080, () => {
     console.log("server working fine");
